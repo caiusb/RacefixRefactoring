@@ -5,6 +5,7 @@ Bundle-SymbolicName: RacefixRefactoring
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: racefix.refactoring.Activator
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.junit
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
