@@ -35,7 +35,7 @@ public class RefactoringEngine {
     
     for (String string : threadLocal) {
       RefactoringElement element = new RefactoringElement(string, new ThreadLocalRefactoring());
-      
+      element.apply();
     }
   }
   

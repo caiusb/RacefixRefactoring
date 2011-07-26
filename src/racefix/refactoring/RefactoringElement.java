@@ -1,5 +1,6 @@
 package racefix.refactoring;
 
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IField;
@@ -15,6 +16,7 @@ import org.eclipse.ltk.core.refactoring.CheckConditionsOperation;
 import org.eclipse.ltk.core.refactoring.PerformRefactoringOperation;
 import org.eclipse.ltk.core.refactoring.Refactoring;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
+import org.eclipse.ui.activities.WorkbenchActivityHelper;
 
 public class RefactoringElement {
 
@@ -66,7 +68,7 @@ public class RefactoringElement {
   public void apply() {
     PerformRefactoringOperation operation = new PerformRefactoringOperation(refactoring, CheckConditionsOperation.ALL_CONDITIONS);
     try {
-      operation.run(new NullProgressMonitor());
+      ResourcesPlugin.getWorkspace().run(operation, new NullProgressMonitor());
     } catch (CoreException e) {
     }
   }
