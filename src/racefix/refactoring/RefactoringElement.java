@@ -26,7 +26,7 @@ public class RefactoringElement {
     this.refactoring = refactoring;
   }
 
-  private class Requestor extends SearchRequestor {
+  private static class Requestor extends SearchRequestor {
 
     public IField field;
 
@@ -45,7 +45,7 @@ public class RefactoringElement {
     return element;
   }
 
-  private IField findField(String string) {
+  public static IField findField(String string) {
     SearchEngine engine = new SearchEngine();
     SearchPattern pattern = SearchPattern.createPattern(string, IJavaSearchConstants.FIELD,
         IJavaSearchConstants.DECLARATIONS, SearchPattern.R_EXACT_MATCH);
@@ -68,6 +68,7 @@ public class RefactoringElement {
     try {
       ResourcesPlugin.getWorkspace().run(operation, new NullProgressMonitor());
     } catch (CoreException e) {
+      System.out.println("OOPS");
     }
   }
 }

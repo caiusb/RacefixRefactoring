@@ -2,9 +2,9 @@ package racefix.refactoring;
 
 import java.util.Set;
 
-import racefix.ClassChangeSet;
-import racefix.PrivatizeMethod;
-import edu.uiuc.threadlocalrefactoring.ThreadLocalRefactoring;
+import racefix.refactoring.ClassChangeSet.PrivatizeMethod;
+
+import edu.uiuc.threadprivaterefactoring.ThreadPrivateRefactoring;
 
 public class RefactoringEngine {
   
@@ -19,10 +19,8 @@ public class RefactoringEngine {
     Set<String> threadLocal = changeSet.threadLocal;
     
     for (String string : threadLocal) {
-      RefactoringElement element = new RefactoringElement(string, new ThreadLocalRefactoring());
+      RefactoringElement element = new RefactoringElement(string, new ThreadPrivateRefactoring());
       element.apply();
     }
   }
-  
-  
 }
