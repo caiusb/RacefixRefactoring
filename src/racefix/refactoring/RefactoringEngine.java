@@ -19,7 +19,7 @@ public class RefactoringEngine {
     Set<String> threadLocal = changeSet.threadLocal;
     
     for (String string : threadLocal) {
-      RefactoringElement element = new RefactoringElement(string, new ThreadPrivateRefactoring());
+      RefactoringElement element = new RefactoringElement(string, new ThreadPrivateRefactoring(RefactoringElement.findField(string)));
       element.apply();
     }
   }

@@ -4,6 +4,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IField;
+import org.eclipse.jdt.core.ILocalVariable;
 import org.eclipse.jdt.core.search.FieldDeclarationMatch;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
 import org.eclipse.jdt.core.search.IJavaSearchScope;
@@ -61,6 +62,12 @@ public class RefactoringElement {
     }
     
     return requestor.field;
+  }
+  
+  public static ILocalVariable findLocalVariable(String method, String name) {
+  	SearchEngine engine = new SearchEngine();
+//  	engine.search(ResourcesPlugin.getWorkspace(), string, IJavaSearchConstants., limitTo, scope, resultCollector)
+  	return null;
   }
   
   public void apply() {
