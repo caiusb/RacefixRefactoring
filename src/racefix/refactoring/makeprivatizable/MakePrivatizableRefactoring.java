@@ -7,6 +7,8 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.Refactoring;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 
+import racefix.refactoring.ClassChangeSet;
+
 /**
  * This refactoring makes a class privatizable
  * 
@@ -17,6 +19,12 @@ import org.eclipse.ltk.core.refactoring.RefactoringStatus;
  * 
  */
 public class MakePrivatizableRefactoring extends Refactoring {
+
+	private ClassChangeSet change;
+
+	public MakePrivatizableRefactoring(ClassChangeSet change) {
+		this.change = change;
+	}
 
 	@Override
 	public String getName() {

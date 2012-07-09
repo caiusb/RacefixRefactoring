@@ -2,6 +2,8 @@ package racefix.refactoring;
 
 import java.util.Set;
 
+import racefix.refactoring.makeprivatizable.MakePrivatizableRefactoring;
+
 import edu.uiuc.threadprivaterefactoring.ThreadPrivateRefactoring;
 
 public class RefactoringEngine {
@@ -14,6 +16,10 @@ public class RefactoringEngine {
 
 	public void applyRefactorings() {
 		for (ClassChangeSet change : changeSet) {
+			
+			String classToMakePrivatizable = change.clazz;
+			
+			new MakePrivatizableRefactoring(change);
 
 			Set<String> threadLocal = change.threadLocal;
 
