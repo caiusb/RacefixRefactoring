@@ -3,9 +3,12 @@ package racefix.refactoring.makeprivatizable;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.ltk.core.refactoring.Change;
+import org.eclipse.ltk.core.refactoring.NullChange;
 import org.eclipse.ltk.core.refactoring.Refactoring;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
+import org.eclipse.ltk.core.refactoring.TextChange;
 
 import racefix.refactoring.ClassChangeSet;
 
@@ -29,28 +32,28 @@ public class MakePrivatizableRefactoring extends Refactoring {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return null;
+		return "";
 	}
 
 	@Override
 	public RefactoringStatus checkInitialConditions(IProgressMonitor pm)
 			throws CoreException, OperationCanceledException {
 		// TODO Auto-generated method stub
-		return null;
+		return RefactoringStatus.create(Status.OK_STATUS);
 	}
 
 	@Override
 	public RefactoringStatus checkFinalConditions(IProgressMonitor pm)
 			throws CoreException, OperationCanceledException {
 		// TODO Auto-generated method stub
-		return null;
+		return RefactoringStatus.create(Status.OK_STATUS);
 	}
 
 	@Override
 	public Change createChange(IProgressMonitor pm) throws CoreException,
 			OperationCanceledException {
 		// TODO Auto-generated method stub
-		return null;
+		return new NullChange();
 	}
 
 }
