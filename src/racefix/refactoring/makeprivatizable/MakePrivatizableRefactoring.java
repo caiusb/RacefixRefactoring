@@ -4,6 +4,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.jdt.core.IType;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.NullChange;
 import org.eclipse.ltk.core.refactoring.Refactoring;
@@ -23,10 +24,10 @@ import racefix.refactoring.ClassChangeSet;
  */
 public class MakePrivatizableRefactoring extends Refactoring {
 
-	private ClassChangeSet change;
+	private IType type;
 
-	public MakePrivatizableRefactoring(ClassChangeSet change) {
-		this.change = change;
+	public MakePrivatizableRefactoring(IType type) {
+		this.type = type;
 	}
 
 	@Override
