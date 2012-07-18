@@ -22,7 +22,7 @@ public class RefactoringEngine {
 
 			String classToMakePrivatizable = change.clazz;
 
-			new MakePrivatizableRefactoring(change);
+//			new MakePrivatizableRefactoring(change);
 
 			Set<String> threadLocal = change.threadLocal;
 
