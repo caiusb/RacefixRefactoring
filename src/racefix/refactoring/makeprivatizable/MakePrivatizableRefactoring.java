@@ -39,7 +39,13 @@ public class MakePrivatizableRefactoring extends Refactoring {
 	@Override
 	public RefactoringStatus checkInitialConditions(IProgressMonitor pm)
 			throws CoreException, OperationCanceledException {
-		// TODO Auto-generated method stub
+		if (!type.isClass())
+			RefactoringStatus.createFatalErrorStatus("Type must be a class");
+		if (type.isBinary())
+			RefactoringStatus.createFatalErrorStatus("Type must be editable (not binary)");
+		if (!type.isStructureKnown())
+			RefactoringStatus.createFatalErrorStatus("The structure of the type must be known");
+		
 		return RefactoringStatus.create(Status.OK_STATUS);
 	}
 
