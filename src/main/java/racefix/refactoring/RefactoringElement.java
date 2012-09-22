@@ -23,6 +23,9 @@ public class RefactoringElement {
 
 	private final IJavaElement element;
 	private final Refactoring refactoring;
+	
+	public static final int CLASS = IJavaSearchConstants.CLASS;
+	public static final int FIELD = IJavaSearchConstants.FIELD;
 
 	public RefactoringElement(String element, Refactoring refactoring) {
 		this.element = findElement(element, IJavaSearchConstants.FIELD);
